@@ -21,7 +21,9 @@ from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('orders/', include('orders.urls')),
     path('cart/',include('cart.urls')),
+    path('coupons/', include('coupons.urls')),
     path('', include('shop1.urls'))]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
